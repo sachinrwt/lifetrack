@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 import { formatDateKey, isSameDay, isSameMonth } from '../utils/dateUtils';
 import { EntryData, LogEntry } from '../types';
-import { Palette, Scale, Image as ImageIcon, X, Loader2, Plus } from 'lucide-react';
+import { Palette, Scale, Image as ImageIcon, X, Loader2, Plus, ArrowUp } from 'lucide-react';
 
 interface DayCellProps { 
   date: Date;
@@ -326,6 +326,17 @@ const DayCell: React.FC<DayCellProps> = ({ date, currentMonthDate, data, onChang
                   placeholder="Add entry..."
                   className="w-full bg-transparent text-xs outline-none placeholder-gray-400 text-gray-700 py-0.5"
                />
+              {/* Mobile Submit Button */}
+               <button
+                 onClick={handleAddLog}
+                 disabled={!newLogText.trim()}
+                 className={`
+                   sm:hidden shrink-0 p-1 rounded-md transition-colors
+                   ${newLogText.trim() ? 'text-indigo-600 bg-indigo-50 active:bg-indigo-100' : 'text-gray-300'} 
+                 `}
+               >
+                 <ArrowUp className="w-3.5 h-3.5" />
+               </button>
             </div>
           </div>
         )}
