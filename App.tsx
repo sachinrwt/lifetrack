@@ -135,7 +135,7 @@ const App: React.FC = () => {
       </main>
 
       <footer className="p-6 text-center text-gray-400 text-sm">
-        <p>© {new Date().getFullYear()} LifeTrack Calendar. Built with React & Tailwind.</p>
+        <p>© {new Date().getFullYear()} LifeTrack Calendar. Built by sachin.</p>
       </footer>
     </div>
   );
